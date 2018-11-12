@@ -12,8 +12,22 @@ body {
     align-content: center;
   }
 
-.page-title {
-    /* color: teal; */
+.box{
+    padding: 30px;
+    background: white;
+    margin-top:0px;
+    margin-left:40px;
+    margin-right:50px;
+    margin-bottom:10px;
+    align-content: right;
+}
+
+.box-title {
+    color: rgb(12, 173, 167);
     font-family: "Times New Roman";
     font-weight: bold;
+}
+
+.description {
+    font-size: "4.5"
 }
