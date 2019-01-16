@@ -123,8 +123,8 @@
             <h2 class="text-white mb-4">About This Project</h2>
             <p class="text-white-50">
               This project aims to create visualizations that portray data from
-              2018 Congressional Election. The first map shows the candidates’
-              winner party, state, and district. The second and third maps are
+              2018 Congressional Election. The first map shows the winning candidates’
+              party, state, and district. The second and third maps are
               choropleths that reflects employment rate in each district based
               on US Census Bureau data, and each winning candidate’s total
               receipts, i.e. the total funds they raised, as reported by the
@@ -143,11 +143,12 @@
         <br />
         <div class="container">
           <!-- Item Heading -->
-          <h2>Choropleth Map <small>- Candidate Financial Info</small></h2>
+          <h2>Choropleth Map <small>- Candidate Financial Strength</small></h2>
 
           <!--  Item Row -->
 
-          <div id="colored_map" style="height: 550px;"></div>
+          <div id="fin_map" style="height: 550px;"></div>
+          <img src="/resources/finances_ledgend.png" style="height: 200px;"></img>
         </div>
       </div>
     </section>
@@ -156,7 +157,8 @@
 
     <!-- Footer -->
     <footer id="team" class="bg-black small text-center text-white-50">
-      <div class="container">Copyright &copy; Mathew, Mohammad, and Paula</div>
+      <div class="container">Copyright &copy; Matthew, Mohammad, and Paula</div>
+
     </footer>
 
     <!-- Bootstrap core JavaScript -->
@@ -170,9 +172,8 @@
     <script src="static/js/grayscale.min.js"></script>
 
     <script type="text/javascript" src="static/js/config.js"></script>
-    <script
-      type="text/javascript"
-      src="static/js/logic_colored_map.js"
-    ></script>
+    <script type="text/javascript" src="static/js/logic_fin_map.js"></script>
+<script src="https://unpkg.com/wired-elements@latest/dist/wired-elements.bundled.min.js"></script>
+
   </body>
 </html>

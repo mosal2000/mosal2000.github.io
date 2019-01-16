@@ -1,4 +1,4 @@
-var map = L.map('map', {
+var map_index = L.map('map_index', {
   center: [39.8283, -98.5795],
   zoom: 4
 });
@@ -13,7 +13,7 @@ L.tileLayer(
     id: 'mapbox.light',
     accessToken: API_KEY
   }
-).addTo(map);
+).addTo(map_index);
 
 var oise = 'cb_2017_us_cd115_20m.json';
 
@@ -97,9 +97,9 @@ function complete(district_data) {
             });
           }
           // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
-          //   click: function(event) {
-          //     map.fitBounds(event.target.getBounds());
-          //   }
+              // click: function(event) {
+              //   map_index.fitBounds(event.target.getBounds());
+              // }
         });
         // Giving each feature a pop-up with information pertinent to it
         layer.bindPopup(
@@ -119,7 +119,7 @@ function complete(district_data) {
       }
 
       // NEW INSERTION FOR POP-UP END
-    }).addTo(map);
+    }).addTo(map_index);
   })
     .done(function() {
       console.log('second success shape_file');
