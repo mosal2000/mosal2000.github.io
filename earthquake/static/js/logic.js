@@ -112,4 +112,86 @@ function createMap(earthquakes) {
       collapsed: false
     })
     .addTo(myMap);
+
+  // Create legends
+  var w = 300,
+    h = 50;
+
+  var key = d3
+    .select('.leaflet-bottom')
+    .append('svg')
+    .attr('width', w)
+    .attr('height', h);
+
+  var legend = key
+    .append('defs')
+    .append('svg:linearGradient')
+    .attr('id', 'gradient')
+    .attr('x1', '0%')
+    .attr('y1', '100%')
+    .attr('x2', '100%')
+    .attr('y2', '100%')
+    .attr('spreadMethod', 'pad');
+
+  legend
+    .append('stop')
+    .attr('offset', '0%')
+    .attr('stop-color', 'green')
+    .attr('stop-opacity', 1);
+
+  legend
+    .append('stop')
+    .attr('offset', '33%')
+    .attr('stop-color', 'yellow')
+    .attr('stop-opacity', 1);
+
+  legend
+    .append('stop')
+    .attr('offset', '66%')
+    .attr('stop-color', 'orange')
+    .attr('stop-opacity', 1);
+
+  legend
+    .append('stop')
+    .attr('offset', '100%')
+    .attr('stop-color', 'red')
+    .attr('stop-opacity', 1);
+
+  key
+    .append('rect')
+    .attr('width', w)
+    .attr('height', h + 0)
+    .style('fill', 'url(#gradient)')
+    .attr('transform', 'translate(0,10)');
+
+  var y = d3
+    .scaleLinear()
+    .range([297, 1])
+    .domain([8, 0]);
+
+  var yAxis = d3
+    .axisBottom()
+    .scale(y)
+    .ticks(5);
+
+  key
+    .append('g')
+    .attr('class', 'y axis')
+    .attr('transform', 'translate(0,30)')
+    .call(yAxis)
+    .append('text')
+    .attr('transform', 'rotate(-90)')
+    .attr('y', 0)
+    .attr('dy', '.71em')
+    .style('text-anchor', 'end')
+    .text('axis title');
+
+  // Create a layer control
+  // Pass in our baseMaps and overlayMaps
+  // Add the layer control to the map
+  L.control
+    .layers(baseMaps, overlayMaps, {
+      collapsed: false
+    })
+    .addTo(myMap);
 }
