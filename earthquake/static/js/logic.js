@@ -136,19 +136,37 @@ function createMap(earthquakes) {
   legend
     .append('stop')
     .attr('offset', '0%')
-    .attr('stop-color', 'green')
+    .attr('stop-color', '#aed75b')
     .attr('stop-opacity', 1);
 
   legend
     .append('stop')
-    .attr('offset', '33%')
-    .attr('stop-color', 'yellow')
+    .attr('offset', '12%')
+    .attr('stop-color', '#ccff33')
     .attr('stop-opacity', 1);
 
   legend
     .append('stop')
-    .attr('offset', '66%')
+    .attr('offset', '24%')
+    .attr('stop-color', '#ffe066')
+    .attr('stop-opacity', 1);
+
+  legend
+    .append('stop')
+    .attr('offset', '36%')
     .attr('stop-color', 'orange')
+    .attr('stop-opacity', 1);
+
+  legend
+    .append('stop')
+    .attr('offset', '48%')
+    .attr('stop-color', 'DarkOrange')
+    .attr('stop-opacity', 1);
+
+  legend
+    .append('stop')
+    .attr('offset', '70%')
+    .attr('stop-color', 'red')
     .attr('stop-opacity', 1);
 
   legend
@@ -172,7 +190,7 @@ function createMap(earthquakes) {
   var yAxis = d3
     .axisBottom()
     .scale(y)
-    .ticks(5);
+    .ticks(8);
 
   key
     .append('g')
